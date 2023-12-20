@@ -1,0 +1,1515 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiManejoRRHH</name>
+    </assembly>
+    <members>
+        <member name="T:ApiManejoRRHH.Controllers.AuthenticationController">
+            <summary>
+            Controlador de Autenticacion
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.AuthenticationController.#ctor(Core.Interfaces.IUserService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.AuthenticationController.Authentication(Domain.Dto.UserTokenRequest)">
+             <summary>
+             Metodo de autenticacion       
+             </summary>
+            <param name="userTokenRequest">
+             <strong> UserName : </strong> nombre de usuario que registro <strong>* Obligatorio</strong> <br/>
+             <strong> Password : </strong> contraseña registrada del usuario codificada en base 64 <strong>* Obligatorio</strong>
+             </param>
+            
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "UserName": "prueba",
+                    "Password": "cHJ1RUJB"
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.CandidateController">
+            <summary>
+            Controlador de vacante 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.#ctor(Core.Interfaces.ICandidatoService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.Create(Domain.Dto.CandidatoRequest)">
+            <summary>
+            Metodo de creacion del candidato       
+            </summary>
+            <param name="candidatoRequest">
+            IdCandidato :  No es necesario enviarlo <br/>
+            <strong> Documento : </strong> Numero de identificacion del candidato <strong> * Obligatorio </strong> <br/>
+            <strong> IdTipoDocumento : </strong> Tipo de identificacion del candidato (Ver metodo   <strong>* Obligatorio </strong> <br/>
+            <strong> PrimerNombre : </strong> Primer nomnbre del candidato  <strong>* Obligatorio </strong> <br/>
+            SegundoNombre :   Segundo nombre del candidato   <br/>
+            <strong> PrimerApellido : </strong> Primer apèllido del candidato   <strong>* Obligatorio </strong> <br/>
+            SegundoApellido :   Segundo apèllido del candidato   <br/>
+            NumeroTelefonico :   numero celular o telefonico del candidato   <br/>
+            Correo :   correo electronico del candidato   <br/>
+            Base64CV :   base 64 de la hoja de vida del candidato  <br/>
+            IdUser:   Id del usuario que se logueo en el sistema <br/>
+            <br/>
+            ListEstudioCandidatoRequest : lista con los datos donde estudio el candidato <br/>
+             IdTipoEstudio:Id del tipo de estudio indica si es primaria bachiller pregrado etc <br/>
+             Institucion: nombre de la institucion  educativa <br/>
+             YearFinally: Año de finalizacion del estudio <br/>
+             TituloObtenido: nombre del titulo obtenido <br/>
+             TituloObtenido: nombre del titulo obtenido <br/>
+             <br/>
+             ListReferenciasLaboralesCandidatoRequest: lista con los datos de las referencais laborales del candidato <br/>
+             <strong> Empresa : </strong> : nombre de la empresa donde trabajo el candidato <br/>
+             <strong> Telefono : </strong>: telefono de la empresa donde trabajo el candidato <br/>
+             NombreContacto: nonbre del jefe directo  de la empresa donde trabajo el candidato <br/>
+             CargoContacto: cargo del jefe directo  de la empresa donde trabajo el candidato <br/>
+             MotivoRetiro: mnotivo del retiro  <br/>
+             CargoDesempenado: cargo que desempeño el candidato  <br/>
+             Desempeno: indica como fue el desempeño del candidato en el puesto de trabajo  <br/>
+             Verificado: indica si la referencia fue validada  <br/>
+             <br/>
+             ListReferenciasPersonalesCandidatoRequest: lista con los datos de las referencais personales del candidato <br/>
+             <strong> NombreContacto : </strong>:  nombre de la persona que referencia el candidato  <br/>
+             <strong> Telefono : </strong>:  telefono de la persona que referencia el candidato  <br/>
+             Parentesco:parentesco con el candidato <br/>
+             TiempoConocido: tiempo de conocer al candidato<br/>
+             Verificado: indica si la referencia fue validada  <br/>
+             
+             
+            </param>
+            <returns></returns>
+            /// <remarks>
+            Request de ejemplo:
+            
+                 {
+                        "Documento": "1010180198",
+                        "IdTipoDocumento": 1,
+                        "PrimerNombre": "carlos",
+                        "SegundoNombre": "manuel",
+                        "PrimerApellido": "ruiz",
+                        "SegundoApellido": "giraldo",
+                        "NumeroTelefonico": "3275675432",
+                        "Correo": "cgiraldo0@gmail.com",
+                        "Base64CV": "",
+                        "IdUser": "",     
+                        "ListEstudioCandidatoRequest": [
+                          {
+                            "IdTipoEstudio": 1,
+                        "Institucion": "C.E.D. Chuniza",
+                        "YearFinally": 2001,
+                        "TituloObtenido": "Basica primaria"
+                          },
+                          {
+                            "IdTipoEstudio": 2,
+                            "Institucion": "C.E.D.Bosco IV",
+                            "YearFinally": 2005,
+                            "TituloObtenido": "Bachillerato Academico"
+                          },
+                          {
+                         "IdTipoEstudio": 4,
+                           "Institucion": "SENA",
+                           "YearFinally": 2017,
+                           "TituloObtenido": "ADSI"
+                          }
+                        ],
+                        "ListReferenciasLaboralesCandidatoRequest": [
+                         {
+                             "Empresa": "Pagos inteligentes",
+                             "Telefono": "7659870",
+                             "NombreContacto": "leonardo beltran",
+                             "CargoContacto": "Cordinador TI",
+                             "MotivoRetiro": "retiro voluntario",
+                             "CargoDesempenado": "desarrollador de software senior",
+                             "Desempeno": "bien",
+                             "Verificado": false
+                          },
+                          {
+                             "Empresa": "OL Software",
+                             "Telefono": "2006785",
+                             "NombreContacto": "Leandro casallas",
+                             "CargoContacto": "Arquitencto de software",
+                             "MotivoRetiro": "retiro voluntario",
+                             "CargoDesempenado": "desarrollador de software senior",
+                             "Desempeno": "bien",
+                             "Verificado": false
+                            }  
+                      ],
+                        "ListReferenciasPersonalesCandidatoRequest": [
+                            {
+                             "NombreContacto": "martha lucia paez",
+                             "Telefono": "3115670932",
+                             "Parentesco": "esposa",
+                             "TiempoConocido": 7,
+                              "Verificado": false
+                            }
+                        ]
+             }
+             
+            </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.Update(Domain.Dto.CandidatoRequest)">
+            <summary>
+            Metodo de actualizacion del candidato     
+            </summary>
+            <param name="candidatoRequest">
+            <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong> <br/>
+            <strong> Documento : </strong> Numero de identificacion del candidato <strong> * Obligatorio </strong> <br/>
+            <strong> IdTipoDocumento : </strong> Tipo de identificacion del candidato (Ver metodo   <strong>* Obligatorio </strong> <br/>
+            <strong> PrimerNombre : </strong> Primer nomnbre del candidato  <strong>* Obligatorio </strong> <br/>
+            SegundoNombre :   Segundo nombre del candidato   <br/>
+            <strong> PrimerApellido : </strong> Primer apèllido del candidato   <strong>* Obligatorio </strong> <br/>
+            SegundoApellido :   Segundo apèllido del candidato   <br/>
+            NumeroTelefonico :   numero celular o telefonico del candidato   <br/>
+            Correo :   correo electronico del candidato   <br/>
+            Base64CV :   base 64 de la hoja de vida del candidato  <br/>
+            <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+            <br/>
+            ListEstudioCandidatoRequest : lista con los datos donde estudio el candidato <br/>
+             IdTipoEstudio:Id del tipo de estudio indica si es primaria bachiller pregrado etc <br/>
+             Institucion: nombre de la institucion  educativa <br/>
+             YearFinally: Año de finalizacion del estudio <br/>
+             TituloObtenido: nombre del titulo obtenido <br/>
+             TituloObtenido: nombre del titulo obtenido <br/>
+             <br/>
+             ListReferenciasLaboralesCandidatoRequest: lista con los datos de las referencais laborales del candidato <br/>
+             <strong> Empresa : </strong> : nombre de la empresa donde trabajo el candidato  <strong> * Obligatorio </strong>  <br/>
+             <strong> Telefono : </strong>: telefono de la empresa donde trabajo el candidato  <strong> * Obligatorio </strong>  <br/>
+             NombreContacto: nonbre del jefe directo  de la empresa donde trabajo el candidato <br/>
+             CargoContacto: cargo del jefe directo  de la empresa donde trabajo el candidato <br/>
+             MotivoRetiro: mnotivo del retiro  <br/>
+             CargoDesempenado: cargo que desempeño el candidato  <br/>
+             Desempeno: indica como fue el desempeño del candidato en el puesto de trabajo  <br/>
+             Verificado: indica si la referencia fue validada  <br/>
+             <br/>
+             ListReferenciasPersonalesCandidatoRequest: lista con los datos de las referencais personales del candidato <br/>
+             <strong> NombreContacto : </strong>:  nombre de la persona que referencia el candidato  <strong> * Obligatorio </strong>  <br/>
+             <strong> Telefono : </strong>:  telefono de la persona que referencia el candidato   <strong> * Obligatorio </strong> <br/>
+             Parentesco:parentesco con el candidato <br/>
+             TiempoConocido: tiempo de conocer al candidato<br/>
+             Verificado: indica si la referencia fue validada  <br/>
+             
+             
+            </param>
+            <returns></returns>
+            /// <remarks>
+            Request de ejemplo:
+            
+                 {
+                        "IdCandidato": 1,
+                        "Documento": "1010180198",
+                        "IdTipoDocumento": 1,
+                        "PrimerNombre": "carlos",
+                        "SegundoNombre": "manuel",
+                        "PrimerApellido": "ruiz",
+                        "SegundoApellido": "giraldo",
+                        "NumeroTelefonico": "3275675432",
+                        "Correo": "cgiraldo0@gmail.com",
+                        "Base64CV": "",
+                        "IdUser": "",                  
+                        "ListEstudioCandidatoRequest": [
+                          {
+                            "IdTipoEstudio": 1,
+                        "Institucion": "C.E.D. Chuniza",
+                        "YearFinally": 2001,
+                        "TituloObtenido": "Basica primaria"
+                          },
+                          {
+                            "IdTipoEstudio": 2,
+                            "Institucion": "C.E.D.Bosco IV",
+                            "YearFinally": 2005,
+                            "TituloObtenido": "Bachillerato Academico"
+                          },
+                          {
+                         "IdTipoEstudio": 4,
+                           "Institucion": "SENA",
+                           "YearFinally": 2017,
+                           "TituloObtenido": "ADSI"
+                          }
+                        ],
+                        "ListReferenciasLaboralesCandidatoRequest": [
+                         {
+                             "Empresa": "Pagos inteligentes",
+                             "Telefono": "7659870",
+                             "NombreContacto": "leonardo beltran",
+                             "CargoContacto": "Cordinador TI",
+                             "MotivoRetiro": "retiro voluntario",
+                             "CargoDesempenado": "desarrollador de software senior",
+                             "Desempeno": "bien",
+                             "Verificado": false
+                          },
+                          {
+                             "Empresa": "OL Software",
+                             "Telefono": "2006785",
+                             "NombreContacto": "Leandro casallas",
+                             "CargoContacto": "Arquitencto de software",
+                             "MotivoRetiro": "retiro voluntario",
+                             "CargoDesempenado": "desarrollador de software senior",
+                             "Desempeno": "bien",
+                             "Verificado": false
+                            }  
+                      ],
+                        "ListReferenciasPersonalesCandidatoRequest": [
+                            {
+                             "NombreContacto": "martha lucia paez",
+                             "Telefono": "3115670932",
+                             "Parentesco": "esposa",
+                             "TiempoConocido": 7,
+                              "Verificado": false
+                            }
+                        ]
+             }
+             
+            </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.UpdateActiveCandidato(Domain.Dto.CandidatoActiveRequest)">
+             <summary>
+             Metodo para actualizar si el candidato esta activo
+             </summary>
+            <param name="candidatoStateRequest">
+             <strong> IdCandidato : </strong>   Numero Id de la tabla del candidato  <strong> * Obligatorio </strong> <br/>
+             <strong> IdUser : </strong> :   Id del usuario que se logueo en el sistema <br/>
+             <strong> Activo : </strong>    valor del candidato debe ser true o false <strong> * Obligatorio </strong>  
+             </param>
+            
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdCandidato": 1,
+                    "IdUser": 1,
+                    "Activo": true
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.UpdateStateCandidato(Domain.Dto.CandidatoStateRequest)">
+             <summary>
+             Metodo para actualizar  el estado de un candidato  
+             </summary>
+            <param name="candidatoStateRequest">
+             <strong> IdCandidato : </strong>   Numero Id de la tabla del candidato  <strong> * Obligatorio </strong> <br/>
+             <strong> IdUser : </strong> :   Id del usuario que se logueo en el sistema <br/>
+             <strong> IdEstadoCandidato : </strong>   Id del estado del candidato <strong> * Obligatorio </strong> <br/>
+              Comentarios:  comentarios acerca del candidato  
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdCandidato": 1,
+                    "IdUser": 1,
+                    "IdEstadoCandidato": 2,
+                    "Comentarios": "string"
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.UpdateVerifyEmploymentRef(System.Collections.Generic.List{Domain.Dto.ReferenciasLaboralesVerifyRequest})">
+             <summary>
+             Metodo para verificar las referencias laborales del candidato    
+             </summary>
+             <param name="referenciasLaboralesVerifyRequests">
+             <strong> IdReferenciasLaboralesCandidato : </strong>   Numero Id de referencia laborales <strong> * Obligatorio </strong> <br/>
+             Verificado: indica si la referencia fue validada  <br/>
+             </param>        
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                     "IdReferenciasLaboralesCandidato": 0,
+                     "Verificado": true
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.UpdateVerifyPersonalRef(System.Collections.Generic.List{Domain.Dto.ReferenciasPersonalesVerifyRequest})">
+             <summary>
+             Metodo para verificar las referencias personales del candidato    
+             </summary>
+            <param name="referenciasPersonalesVerifyRequests">
+              <strong> IdReferenciasPersonalesCandidato : </strong>   Numero Id de referencia personales <strong> * Obligatorio </strong> <br/>
+              Verificado: indica si la referencia fue validada  
+             </param>
+            
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                     "IdReferenciasPersonalesCandidato": 0,
+                     "Verificado": true
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.GetAll">
+            <summary>
+            Obtener candidatos 
+            </summary>         
+            <returns></returns> 
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.GetStudies(System.Int32)">
+            <summary>
+            Obtener estudios del candidatos 
+            </summary>    
+            <param name="idCandidato">
+            <strong> IdCandidato : </strong>   Numero Id de la tabla del candidato  <strong> * Obligatorio </strong> <br/>
+            </param>
+            <returns></returns> 
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.GetPersonalReferences(System.Int32)">
+            <summary>
+            Obtener referencias personales del candidatos 
+            </summary>  
+            <param name="idCandidato">
+            <strong> IdCandidato : </strong>   Numero Id de la tabla del candidato  <strong> * Obligatorio </strong> <br/>
+            </param>
+            <returns></returns> 
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CandidateController.GetEmploymentReferences(System.Int32)">
+            <summary>
+            Obtener referencias laborales  del candidatos 
+            </summary>  
+            <param name="idCandidato">
+            <strong> IdCandidato : </strong>   Numero Id de la tabla del candidato  <strong> * Obligatorio </strong> <br/>
+            </param>
+            <returns></returns>     
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.CategoryController">
+            <summary>
+            Controlador de Categoria 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CategoryController.#ctor(Core.Interfaces.ITipoTableService{Domain.Dto.CategoriaRequest})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CategoryController.Create(Domain.Dto.CategoriaRequest)">
+             <summary>
+             Metodo de creacion del cliente       
+             </summary>
+            <param name="categoriaRequest">
+              IdCategoria :   no es necesario enviarlo  <br/>
+              Description: descripcion de la categoria
+             </param>
+            
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                      "Description": "Lenguajes de programacion"
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CategoryController.Update(Domain.Dto.CategoriaRequest)">
+             <summary>
+             Metodo de actualizacion de la categoria     
+             </summary>
+            <param name="categoriaRequest">
+              <strong> IdCategoria : </strong>   Numero Id de la categoria <strong> * Obligatorio </strong> <br/>    
+              Description: descripcion de la categoria
+             </param>
+            
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                     "IdCategoria": 1,
+                     "Description": "Lenguajes de programacion"
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.CategoryController.GetAll">
+            <summary>
+            Obtener categorias 
+            </summary>         
+            <returns></returns> 
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.ClientController">
+            <summary>
+            Controlador de Cliente
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ClientController.#ctor(Core.Interfaces.IClientService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ClientController.Create(Domain.Dto.ClientRequest)">
+             <summary>
+             Metodo de creacion del cliente       
+             </summary>
+            <param name="clientRequest">
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+              IdCliente :  no enviar   <br/>
+             <strong> Name : </strong> :   nombre del cliente o empresa <br/>
+             <strong> Nit : </strong>   nit del cliente o de la empresa  <strong> * Obligatorio </strong> <br/>
+              Base64File:  base 64 del logo del cliente o de la empresa
+              
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdUser": 1,
+                    "IdCliente": 1,
+                    "Name": "`mpresa prueba S.A",
+                    "Nit": "9067668848-2",
+                    "Base64File": "",
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ClientController.Update(Domain.Dto.ClientRequest)">
+             <summary>
+             Metodo de actualizacion de la informnacion cliente       
+             </summary>
+            <param name="clientRequest">  
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+             <strong> IdCliente : </strong> Numero Id del cliente <strong> * Obligatorio </strong> <br/>
+             <strong> Name : </strong> :   nombre del cliente o empresa <br/>
+             <strong> Nit : </strong>   nit del cliente o de la empresa  <strong> * Obligatorio </strong> <br/>
+              Base64File:  base 64 del logo del cliente o de la empresa
+              
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdUser": 1,
+                    "IdCliente": 1,
+                    "Name": "`mpresa prueba S.A",
+                    "Nit": "9067668848-2",
+                    "Base64File": "",
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ClientController.CancelProcessCandidateByClient(Domain.Dto.CancelProcessClientRequest)">
+             <summary>
+             Metodo de cancelar procesos de un candidato por cliente  cliente       
+             </summary>
+            <param name="cancelProcessClientRequest">
+             <strong> IdCliente : </strong> Numero Id del cliente <strong> * Obligatorio </strong> <br/>
+             <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong>   
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdCandidato": 1,
+                    "IdCliente": 1         
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ClientController.GetByDocument(System.String)">
+             <summary>
+             Obtener cliente por documento    
+             </summary>
+            <param name="nit">
+             <strong> Nit : </strong>   nit del cliente o de la empresa  <strong> * Obligatorio </strong> 
+            </param>
+             <returns></returns>      
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ClientController.GetClients">
+            <summary>
+            Obtener clientes 
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ClientController.GetEmployeesByClient(System.Int32)">
+             <summary>
+             Obtener empleados  por cliente    
+             </summary>
+            <param name="idClient">
+             <strong> IdCliente : </strong> Numero Id del cliente <strong> * Obligatorio </strong>  
+             </param>
+             <returns></returns>     
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ClientController.GetVacantsByClient(System.Int32)">
+             <summary>
+             Obtener vacantes por cliente    
+             </summary>       
+            <param name="idClient">
+             <strong> IdCliente : </strong> Numero Id del cliente <strong> * Obligatorio </strong>  
+             </param>
+             <returns></returns>      
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.ComisionController">
+            <summary>
+            Controlador de Cliente
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ComisionController.#ctor(Core.Interfaces.IComisionService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ComisionController.Create(Domain.Dto.ComisionRequest)">
+             <summary>
+             Metodo de actualizaacion de  la comision      
+             </summary>
+            <param name="comisionRequest">
+             <strong> IdComision : </strong>    No enviar <br/>
+             <strong> IdUsuarioComision : </strong>    Id del usuario que realizo la contratacion  <br/>
+             <strong> IdEmpleado : </strong>  Numero id del empleado  <br/>
+              FechaIngreso:  Fecha de ingreso del empleado <br/>
+              Activo:  estado de la solicitud
+              
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdComision": 1,
+                    "IdUsuarioComision": 1,
+                    "IdEmpleado": 1,
+                    "FechaIngreso": "2023-05-06",
+                    "Activo": true
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ComisionController.Update(Domain.Dto.ComisionRequest)">
+             <summary>
+             Metodo de actualizaacion de  la comision      
+             </summary>
+            <param name="comisionRequest">
+             <strong> IdComision : </strong>    Numero Id de la comision <br/>
+             <strong> IdUsuarioComision : </strong>    Id del usuario que realizo la contratacion  <br/>
+             <strong> IdEmpleado : </strong>  Numero id del empleado  <br/>
+              FechaIngreso:  Fecha de ingreso del empleado <br/>
+              Activo:  estado de la solicitud
+              
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdComision": 1,
+                    "IdUsuarioComision": 1,
+                    "IdEmpleado": 1,
+                    "FechaIngreso": "2023-05-06",
+                    "Activo": true
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ComisionController.UpdateState(Domain.Dto.ComisionStatusRequest)">
+             <summary>
+             Metodo de actualizacion del estado de la comision      
+             </summary>
+            <param name="comisionStatusRequest">
+             <strong> IdComision : </strong>    Numero Id de la comision <br/>  
+              Activo:  estado de la solicitud true o false
+              
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdComision": 1,    
+                    "Activo": false
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ComisionController.GetByIdComision(System.Int64)">
+             <summary>
+             Obtener comision por id    
+             </summary>
+            <param name="idComision">
+             <strong> idComision : </strong>      Numero Id de la comision  <strong> * Obligatorio </strong> 
+            </param>
+             <returns></returns>      
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ComisionController.GetComisiones">
+            <summary>
+            Obtener comoisiones 
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.ContractController">
+            <summary>
+            Controlador de contratos 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractController.#ctor(Core.Interfaces.IContratoService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractController.Create(Domain.Dto.ContratoRequest)">
+             <summary>
+             Metodo de creacion del Contrato   
+             </summary>         
+            <param name="contratoRequest">
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+             <strong> IdCliente : </strong> Numero Id del cliente <strong> * Obligatorio </strong> <br/>
+             <strong> IdProceso : </strong> Numero Id del  proceso <strong> * Obligatorio </strong> <br/>
+             <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong>   
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                     
+                    "IdProceso": 1,
+                    "IdCandidato": 1,
+                    "IdUser": 1,
+                    "IdCliente": 1,
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractController.Update(Domain.Dto.ContratoRequest)">
+             <summary>
+             Metodo de actualizacion del  contrato   
+             </summary>
+            <param name="contratoRequest">         
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+             <strong> IdContrato : </strong>    Id del contrato <br/>
+             <strong> IdCliente : </strong> Numero Id del cliente <strong> * Obligatorio </strong> <br/>
+             <strong> IdProceso : </strong> Numero Id del  proceso <strong> * Obligatorio </strong> <br/>
+             <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong>   
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                     
+                    "IdProceso": 1,
+                    "IdCandidato": 1,
+                    "IdUser": 1,
+                    "IdCliente": 1,
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractController.UpdateStateActive(Domain.Dto.ContratoEstadoRequest)">
+             <summary>
+             Metodo de que cambia el estado a activo/desactivo del contrato   
+             </summary>
+            <param name="contratoEstadoRequest">
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+             <strong> IdContrato : </strong>    Id del contrato <br/>      
+              Activo:  valor true o false para activar o desactivar el contrato
+              
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {    
+                    "IdCandidato": 1,
+                    "IdUser": 1,
+                    "Activo": true
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractController.GetAll">
+            <summary>
+            Obtener  contratos 
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractController.GetById(System.Int64)">
+             <summary>
+             Obtener  contratos 
+             </summary>         
+            <param name="idContrato">
+             <strong> IdContrato : </strong>    Id del contrato  <strong> * Obligatorio </strong> 
+            </param>
+             <returns></returns>  
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.ContractTypeController">
+            <summary>
+            Controlador de tipo de contratos 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractTypeController.#ctor(Core.Interfaces.ITipoTableService{Domain.Dto.TipoContratoRequest})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractTypeController.Create(Domain.Dto.TipoContratoRequest)">
+             <summary>
+             Metodo de creacion del Tipo de contrato   
+             </summary>         
+            <param name="objectRequest">  
+             <strong> Description : </strong> : Descripcion del tipo de contrato <strong> * Obligatorio </strong>   
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                  
+                    "Description": "Termino indefinido"         
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractTypeController.Update(Domain.Dto.TipoContratoRequest)">
+             <summary>
+             Metodo de actualizacion del Tipo de contrato   
+             </summary>
+            <param name="objectRequest">
+             <strong> IdContrato : </strong> Numero Id del tipo de contrato  <strong> * Obligatorio </strong> <br/>
+             <strong> Description : </strong> : Descripcion del tipo de contrato <strong> * Obligatorio </strong>   
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdContrato":  1,  
+                    "Description": "Termino indefinido"         
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ContractTypeController.GetAll">
+            <summary>
+            Obtener tipos de contratos 
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.DocumentTypeController">
+            <summary>
+            Controlador de Tipo documento 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.DocumentTypeController.#ctor(Core.Interfaces.ITipoTableService{System.Object})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.DocumentTypeController.GetAll">
+            <summary>
+            Obtener Tipo de documentos 
+            </summary>         
+            <returns></returns> 
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.EmployeeController">
+            <summary>
+            Controlador de Tipo documento 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.EmployeeController.CreateCertificados(Domain.Dto.ContratoCreateRequest)">
+             <summary>
+             Metodo para crear los certificados estudiantiles, personales y laborales del empleado   
+             </summary>         
+            <param name="contratoRequest">   
+             <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong>   
+             CertificadosLaborales:  lista de los certificados laborales en base 64  <br/>
+             CertificadosPersonales:  lista de los certificados personales en base 64  <br/>
+              CertificadosEstudiantiles:  lista de los certificados estudiantiles
+              
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                     
+                    "IdCandidato": 1,
+                  
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.EmployeeController.UpdateCertificados(Domain.Dto.ContratoEditRequest)">
+             <summary>
+             Metodo para actualizar los certificados estudiantiles, personales y laborales del empleado   
+             </summary>         
+            <param name="contratoRequest">   
+             <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong>   
+             CertificadosLaborales:  lista de los certificados laborales en base 64  <br/>
+             CertificadosPersonales:  lista de los certificados personales en base 64  <br/>
+              CertificadosEstudiantiles:  lista de los certificados estudiantiles
+              
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                     
+                    "IdCandidato": 1,
+                  
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.EmployeeController.GetrejectedProcessByUser(System.Int64)">
+             <summary>
+             Obtener informacion del empleado por id    
+             </summary>
+            <param name="idEmpleado">
+             <strong> idEmpleado : </strong> numero Id delempleado <strong>* Obligatorio</strong> 
+             </param>
+             <returns></returns>  
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.EmployeeController.GetHistoricalNoverlty(System.Int64)">
+            <summary>
+            Obtener las novedades del empleado 
+            </summary>         
+            <returns></returns> 
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.EmployeeController.GetCertificadosByEmployee(System.Int64)">
+            <summary>
+            Obtener los certificados del empleado 
+            </summary>         
+            <returns></returns> 
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.NoveltyController">
+            <summary>
+            Controlador de Novedades
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.NoveltyController.Create(Domain.Dto.NovedadRequest)">
+             <summary>
+             Metodo de creacion del novedades       
+             </summary>
+            <param name="novedadRequest">        
+             <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong>   <br/>
+             <strong> IdTipoNovedad : </strong> Numero Id del tipo de novedad  <strong> * Obligatorio </strong> <br/>
+             Observacion:   observacion de la novedad <br/>
+             Activo: Valor true o falso para activar la novedad <br/>
+             Anio: año <br/>
+             Mes: Mes <br/>
+             Dia: Dia <br/>
+             DiasIncapacidad: Dias de incapacidad <br/>
+             DiasVacaciones: Dias de vacaciones <br/>
+             DiasNoRemunerados: Dias no remunerados <br/>
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema     
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdCandidato": 1,
+                    "IdTipoNovedad": 3,         
+                     "Observacion": "el candidato presento una incapacidad",
+                     "Activo": true,
+                     "Anio": 2023,
+                     "Mes": 9,
+                     "Dia": 14,
+                     "DiasIncapacidad": 2,
+                     "DiasVacaciones": 0,
+                     "DiasNoRemunerados": 0,
+                     "IdUser": 1
+                    
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.NoveltyController.Update(Domain.Dto.NovedadRequest)">
+             <summary>
+             Metodo de actualizar el estado de la novedad
+             </summary>
+            <param name="novedadRequest">
+             <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong>  <br/>
+             <strong> IdNovedad : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong> <br/>  
+             <strong> IdTipoNovedad : </strong> Numero Id del tipo de novedad  <strong> * Obligatorio </strong> <br/>
+             Observacion:   observacion de la novedad <br/>
+             Activo: Valor true o falso para activar la novedad <br/>
+             Anio: año <br/>
+             Mes: Mes <br/>
+             Dia: Dia <br/>
+             DiasIncapacidad: Dias de incapacidad <br/>
+             DiasVacaciones: Dias de vacaciones <br/>
+             DiasNoRemunerados: Dias no remunerados <br/>
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema     
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdNovedad": 1,
+                    "IdCandidato": 1,
+                    "IdTipoNovedad": 3,         
+                    "Observacion": "el candidato presento una incapacidad",
+                    "Activo": true,
+                    "Anio": 2023,
+                    "Mes": 9,
+                    "Dia": 14,
+                    "DiasIncapacidad": 2,
+                    "DiasVacaciones": 0,
+                    "DiasNoRemunerados": 0,
+                    "IdUser": 1
+                    
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.NoveltyController.UpdateState(Domain.Dto.NovedadStateRequest)">
+             <summary>
+             Metodo de actualizar el estado de la novedad
+             </summary>
+            <param name="novedadStateRequest">
+             <strong> IdNovedad : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio </strong>  <br/>
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+             Activo: Valor true o falso para activar la novedad    
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdNovedad": 1,
+                    "IdUser": 1,
+                    "Activo": true
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.NoveltyController.GetAll">
+            <summary>
+            Obtener Usuarios 
+            </summary>         
+            <returns></returns> 
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.NoveltyController.GetById(System.Int32)">
+             <summary>
+             Obtener novedades por candidato 
+             </summary>
+            <param name="idCandidato">
+             <strong> idCandidato : </strong>   Numero Id de la tabla del candidato  <strong> * Obligatorio </strong> 
+             </param>
+             <returns></returns> 
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.NoveltyTypeController">
+            <summary>
+            Controlador de tipo de novedad 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.NoveltyTypeController.#ctor(Core.Interfaces.ITipoTableService{System.Object})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.NoveltyTypeController.GetAll">
+            <summary>
+            Obtener tipos de novedad 
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.ProcessController">
+            <summary>
+            Controlador de vacante 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ProcessController.#ctor(Core.Interfaces.IProcesoService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ProcessController.Create(Domain.Dto.ProcesoRequest)">
+             <summary>
+             Metodo de creacion del proceso        
+             </summary>
+            <param name="procesoRequest">
+             <strong> Idvacante : </strong>    Id de la vacante <strong> * Obligatorio  </strong>  <br/>
+             <strong> IdCandidato : </strong> :  Numero Id de la tabla del candidato  <strong> * Obligatorio  </strong>     
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "Idvacante": 1,
+                    "IdCandidato": 1 
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ProcessController.UpdateStateCandidato(Domain.Dto.ProcesoEstadoRequest)">
+             <summary>
+             Metodo para actualizar  el estado del candidato dentro del proceso
+             </summary>
+            <param name="procesoEstadoRequest">
+             <strong> IdProceso : </strong>   Numero Id del proceso <strong> * Obligatorio  </strong>  <br/>
+             <strong> IdEstado : </strong> :  Numero Id del estado <strong> * Obligatorio  </strong>     
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdProceso": 1,
+                    "IdEstado": 2 
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.ProcessController.GetAllByIdVacant(System.Int32)">
+             <summary>
+             Obtener candidatos por vacante 
+             </summary>         
+            <param name="idVacante">
+             <strong> Idvacante : </strong>    Id de la vacante <strong> * Obligatorio  </strong>
+             </param>
+             <returns></returns>  
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.SalaryTypeController">
+            <summary>
+            Controlador de Tipo de salarios 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.SalaryTypeController.#ctor(Core.Interfaces.ITipoTableService{Domain.Dto.TipoSalarioRequest})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.SalaryTypeController.Create(Domain.Dto.TipoSalarioRequest)">
+             <summary>
+             Metodo de creacion del Tipo de salario   
+             </summary>         
+            <param name="objectRequest">
+             <strong> Description : </strong> : Descripcion del tipo de salario <strong> * Obligatorio </strong>   
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                   
+                    "Description": "Salario 64 / 40"         
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.SalaryTypeController.Update(Domain.Dto.TipoSalarioRequest)">
+             <summary>
+             Metodo de actualizacion del Tipo de salario   
+             </summary>
+            <param name="objectRequest">
+              <strong> IdSalario : </strong> Numero Id del tipo de salario <strong> * Obligatorio </strong> <br/>
+             <strong> Description : </strong> : Descripcion del tipo de salario <strong> * Obligatorio </strong>   
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdSalario": 1,
+                    "Description": "Salario 64 / 40"         
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.SalaryTypeController.GetAll">
+            <summary>
+            Obtener tipos de salario 
+            </summary>         
+            <returns></returns>       
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.StateCandidateController">
+            <summary>
+            Controlador de vacante 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.StateCandidateController.#ctor(Core.Interfaces.ITipoTableService{System.Object})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.StateCandidateController.GetAll">
+            <summary>
+            Obtener estado candidato
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.StudyTypeController">
+            <summary>
+            Controlador de tipo estudio 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.StudyTypeController.#ctor(Core.Interfaces.ITipoTableService{System.Object})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.StudyTypeController.GetAll">
+            <summary>
+            Obtener tipo estudio 
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.UserController">
+            <summary>
+            Controlador de Usuario
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.UserController.#ctor(Core.Interfaces.IUserService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.UserController.Create(Domain.Dto.UserRequest)">
+             <summary>
+             Metodo de creacion del usuario       
+             </summary>
+            <param name="userRequest">
+             <strong> UserName : </strong> nombre de usuario que registro <strong>* Obligatorio</strong> <br/>
+             <strong> Password : </strong> contraseña registrada del usuario codificada en base 64 <strong>* Obligatorio</strong> <br/>
+             <strong> IdRol : </strong> Numero id del rol <strong>* Obligatorio</strong>
+             </param>
+            
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "UserName": "prueba",
+                    "Password": "cHJ1RUJB",
+                    "IdRol": 1      
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.UserController.Update(Domain.Dto.UserCreateRequest)">
+             <summary>
+             Metodo de actualizacion del usuario   
+             </summary>
+            <param name="userRequest">
+             <strong> Id : </strong> numero Id del usuario que registro <strong>* Obligatorio</strong> <br/>
+             <strong> UserName : </strong> nombre de usuario que registro <strong>* Obligatorio</strong> <br/>
+             <strong> Password : </strong> contraseña registrada del usuario codificada en base 64 <strong>* Obligatorio</strong> <br/>
+             <strong> IdRol : </strong> Numero id del rol <strong>* Obligatorio</strong>
+             </param>
+            
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "Id": 1,  
+                    "UserName": "prueba",
+                    "Password": "cHJ1RUJB",
+                    "IdRol": 1      
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.UserController.GetAll">
+            <summary>
+            Obtener Usuarios 
+            </summary>         
+            <returns></returns> 
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.UserController.GetById(System.Int32)">
+             <summary>
+             Obtener datos por Id del Usuario  
+             </summary>
+            <param name="idUser">
+             <strong> idUser : </strong> numero Id del usuario que registro <strong>* Obligatorio</strong> 
+             </param>
+             <returns></returns>  
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.UserController.GetProccessByUser(System.Int32)">
+             <summary>
+             Obtener procesos por Id del Usuario  
+             </summary>
+            <param name="idUser">
+             <strong> idUser : </strong> numero Id del usuario que registro <strong>* Obligatorio</strong> 
+             </param>
+             <returns></returns>  
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.UserController.GetrejectedProcessByUser(System.Int32)">
+             <summary>
+             Obtener candidatos rechazados por Id del Usuario  
+             </summary>
+            <param name="idUser">
+             <strong> idUser : </strong> numero Id del usuario que registro <strong>* Obligatorio</strong> 
+             </param>
+             <returns></returns>  
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.VacantController">
+            <summary>
+            Controlador de vacante 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantController.#ctor(Core.Interfaces.IVacantService)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantController.Create(Domain.Dto.VacanteRequest)">
+             <summary>
+             Metodo de creacion del Vacante       
+             </summary>
+            <param name="vacanteRequest">
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+             <strong> IdCliente : </strong> Numero Id del cliente <strong> * Obligatorio </strong> <br/>
+             <strong> DescripcionCargo : </strong> :  nombre de la vacante o del cargo vacante <strong> * Obligatorio </strong> <br/>
+             <strong> Profesion : </strong> :  profesion que requiere la vacante <strong> * Obligatorio </strong> <br/>
+             <strong> TiempoExperiencia : </strong> :  Tiempo de experiencia requerido <strong> * Obligatorio </strong> <br/>
+             <strong> IdContrato : </strong> :  numero id del tipo de contrato de la vacante <strong> * Obligatorio </strong> <br/>
+             <strong> IdSalario : </strong> :  numero id del tipo de salario de la vacante <strong> * Obligatorio </strong> <br/>
+              Horario: horario de la jornada laboral<br/>
+             <strong> IdModalidadTrabajo : </strong> :  numero id del tipo de salario de la vacante <strong> * Obligatorio </strong> <br/>
+              Idioma: idioma requerido de la vacante<br/>
+              PorcentajeIdioma: Porcentaje del idioma requerido de la vacante<br/>
+              PruebaTecnica: campo que indica si la vacante requiere prueba tecnica<br/>
+              DescripcionFunciones: funciones que tiene la vacante<br/>
+              Comentarios: comentarios adicionales de la vacante<br/>
+              <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>   
+              ListSkillsVacante: lista con las skill que requiere la vacante <br/>
+              <strong> IdCategoria : </strong>    Id de la categoria <br/>   
+              DescripcionSkill: descripcion de la categoria o de la habilidad <br/>
+              Activo: Valor true o falso para activar la habilidad de la vacante
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdUser": 1,
+                    "IdCliente": 1,
+                    "DescripcionCargo": "Jaba backend senior",
+                    "Profesion": "ing de sistemas, ing de software etc",
+                    "TiempoExperiencia": 3,
+                    "IdContrato": 1,
+                    "IdSalario": 1,
+                    "Horario": "lunes a viernes",
+                    "IdModalidadTrabajo": 1,
+                    "Horario": "lunes a viernes",        
+                    "Idioma": "Ingles",
+                    "PorcentajeIdioma": "80%",
+                    "PruebaTecnica": true,
+                    "DescripcionFunciones": "realizar los requerimientos tecnicos, realizar test unitarios",
+                    "Comentarios": "",
+                    "IdUser": 1,
+                     "ListSkillsVacante": [
+                         {
+                           "IdCategoria": 0,
+                           "DescripcionSkill": "string",
+                           "Activo": true
+                         }
+                      ]
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantController.Update(Domain.Dto.VacanteRequest)">
+             <summary>
+             Metodo de actualizacion de la Vacante     
+             </summary>
+            <param name="vacanteRequest">
+             <strong> IdVacante : </strong>  Numero  Id de la vacante <br/>
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>
+             <strong> IdCliente : </strong> Numero Id del cliente <strong> * Obligatorio </strong> <br/>
+             <strong> DescripcionCargo : </strong> :  nombre de la vacante o del cargo vacante <strong> * Obligatorio </strong> <br/>
+             <strong> Profesion : </strong> :  profesion que requiere la vacante <strong> * Obligatorio </strong> <br/>
+             <strong> TiempoExperiencia : </strong> :  Tiempo de experiencia requerido <strong> * Obligatorio </strong> <br/>
+             <strong> IdContrato : </strong> :  numero id del tipo de contrato de la vacante <strong> * Obligatorio </strong> <br/>
+             <strong> IdSalario : </strong> :  numero id del tipo de salario de la vacante <strong> * Obligatorio </strong> <br/>
+              Horario: horario de la jornada laboral<br/>
+             <strong> IdModalidadTrabajo : </strong> :  numero id del tipo de salario de la vacante <strong> * Obligatorio </strong> <br/>
+              Idioma: idioma requerido de la vacante<br/>
+              PorcentajeIdioma: Porcentaje del idioma requerido de la vacante<br/>
+              PruebaTecnica: campo que indica si la vacante requiere prueba tecnica<br/>
+              DescripcionFunciones: funciones que tiene la vacante<br/>
+              Comentarios: comentarios adicionales de la vacante<br/>
+              <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <br/>   
+              ListSkillsVacante: lista con las skill que requiere la vacante <br/>
+              <strong> IdCategoria : </strong>    Id de la categoria <br/>   
+              DescripcionSkill: descripcion de la categoria o de la habilidad <br/>
+              Activo: Valor true o falso para activar la habilidad de la vacante
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdVacante": 1,
+                    "IdUser": 1,
+                    "IdCliente": 1,
+                    "DescripcionCargo": "Jaba backend senior",
+                    "Profesion": "ing de sistemas, ing de software etc",
+                    "TiempoExperiencia": 3,
+                    "IdContrato": 1,
+                    "IdSalario": 1,
+                    "Horario": "lunes a viernes",
+                    "IdModalidadTrabajo": 1,
+                    "Horario": "lunes a viernes",        
+                    "Idioma": "Ingles",
+                    "PorcentajeIdioma": "80%",
+                    "PruebaTecnica": true,
+                    "DescripcionFunciones": "realizar los requerimientos tecnicos, realizar test unitarios",
+                    "Comentarios": "",
+                    "IdUser": 1,
+                     "ListSkillsVacante": [
+                         {
+                           "IdCategoria": 0,
+                           "DescripcionSkill": "string",
+                           "Activo": true
+                         }
+                      ]
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantController.UpdateState(Domain.Dto.VacanteStateRequest)">
+             <summary>
+             Metodo para cambiar el estado de la vacante  
+             </summary>
+            <param name="vacanteStateRequest">
+             <strong> IdVacante : </strong>  Numero  Id de la vacante <strong> * Obligatorio </strong> <br/>
+             <strong> IdEstadoVacante : </strong> :  Numero Id del estado de la vacante <strong> * Obligatorio </strong> <br/>  
+             <strong> IdUser : </strong>    Id del usuario que se logueo en el sistema <strong> * Obligatorio </strong> 
+             </param>    
+             <returns></returns>
+             /// <remarks>
+             Request de ejemplo:
+              
+                 {
+                    "IdVacante": 1,
+                    "IdEstadoVacante": 1,
+                    "IdUser": 1
+             
+                 }
+            
+             </remarks>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantController.GetAll">
+            <summary>
+            Obtener Vacantes 
+            </summary>         
+            <returns></returns> 
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantController.GetById(System.Int32)">
+             <summary>
+             Obtener datos por Id de la vacante  
+             </summary>
+            <param name="idVacante">
+             <strong> IdCliente : </strong> Numero Id de la vacante <strong> * Obligatorio </strong>  
+             </param>
+             <returns></returns> 
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantController.SkillVacanteById(System.Int32)">
+             <summary>
+             Obtener skill por Id de la vacante  
+             </summary>
+            <param name="idVacante">
+             <strong> IdCliente : </strong> Numero Id de la vacante <strong> * Obligatorio </strong>  
+             </param>
+             <returns></returns> 
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.VacantStateController">
+            <summary>
+            Controlador de Categoria 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantStateController.#ctor(Core.Interfaces.ITipoTableService{System.Object})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.VacantStateController.GetAll">
+            <summary>
+            Obtener Estados de la vacante 
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="T:ApiManejoRRHH.Controllers.WorkModalityController">
+            <summary>
+            Controlador de vacante 
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.WorkModalityController.#ctor(Core.Interfaces.ITipoTableService{System.Object})">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Controllers.WorkModalityController.GetAll">
+            <summary>
+            Obtener modalidad de trabajo 
+            </summary>         
+            <returns></returns>
+        </member>
+        <member name="T:ApiManejoRRHH.Helpers.AuthorizeAttribute">
+            <summary>
+            Clase validacion de token
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Helpers.AuthorizeAttribute.OnAuthorization(Microsoft.AspNetCore.Mvc.Filters.AuthorizationFilterContext)">
+            <summary>
+            Metodo que valida el token
+            </summary>
+        </member>
+        <member name="T:ApiManejoRRHH.Middlewares.JwtMiddleware">
+            <summary>
+            Middleware de comprobacion del token
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Middlewares.JwtMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:ApiManejoRRHH.Middlewares.JwtMiddleware.InvokeAsync(Microsoft.AspNetCore.Http.HttpContext,Core.Interfaces.ITokenService)">
+            <summary>
+            Metodo para validar el token
+            </summary>
+        </member>
+    </members>
+</doc>
