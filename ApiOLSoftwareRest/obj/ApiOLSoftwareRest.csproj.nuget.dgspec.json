@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\ApiOLSoftwareRest\\ApiOLSoftwareRest.csproj": {}
+    "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\ApiOLSoftwareRest\\ApiOLSoftwareRest.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\ApiOLSoftwareRest\\ApiOLSoftwareRest.csproj": {
+    "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\ApiOLSoftwareRest\\ApiOLSoftwareRest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\ApiOLSoftwareRest\\ApiOLSoftwareRest.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\ApiOLSoftwareRest\\ApiOLSoftwareRest.csproj",
         "projectName": "ApiOLSoftwareRest",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\ApiOLSoftwareRest\\ApiOLSoftwareRest.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\ApiOLSoftwareRest\\ApiOLSoftwareRest.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\ApiOLSoftwareRest\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\ApiOLSoftwareRest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Core\\Core.csproj"
+              "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Core\\Core.csproj"
               }
             }
           }
@@ -51,6 +51,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.17.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -80,14 +84,14 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Core\\Core.csproj": {
+    "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Core\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -108,11 +112,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Domain\\Domain.csproj"
+              "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Domain\\Domain.csproj"
               }
             }
           }
@@ -166,14 +170,14 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -194,8 +198,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Domain\\Domain.csproj"
+              "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Domain\\Domain.csproj"
               }
             }
           }
@@ -239,14 +243,14 @@
         }
       }
     },
-    "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Domain\\Domain.csproj": {
+    "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

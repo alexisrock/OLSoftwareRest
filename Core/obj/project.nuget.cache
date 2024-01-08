@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j59XTBAckspsF3KsaOF1Uh/trBxW7rsHE4hwxrudLs6zqTDktxHFTN9t8u4um+vENFZ4OhmWaZkBJuW/7Pvm7A==",
+  "dgSpecHash": "JFPDRYW9WfhA13rKptHArO/mX7wK39lMa1phIIacPUsbZ4UO+Y7/28eo5xxRzNpRDOYfTwG9MxxqxAzumqdBKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lenovo\\source\\repos\\OLSoftwareRest\\Core\\Core.csproj",
+  "projectFilePath": "C:\\Users\\Lenovo\\Documents\\Proyectos\\Net\\OLSoftwareRest\\Core\\Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lenovo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Lenovo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
