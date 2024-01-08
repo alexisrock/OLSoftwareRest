@@ -15,10 +15,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.WebHost.UseUrls("http://*:8088");
 builder.Services.AddSwaggerGen(c =>
 {
 
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Manejo de RRHH", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Olsoftware Api", Version = "v1" });
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
